@@ -33,24 +33,6 @@ public class Gamerules {
         return false;
     }
 
-    public static boolean isShipAdjacent(Coordinate coordinate, Field field) {
-        int leftSide = coordinate.col - 1;
-        int rightSide = coordinate.col + 1;
-        int topSide = coordinate.row - 1;
-        int bottomSide = coordinate.row + 1;
-
-        char leftField = field.field[coordinate.row][leftSide];
-        char rightField = field.field[coordinate.row][rightSide];
-        char topField = field.field[topSide][coordinate.col];
-        char bottomField = field.field[bottomSide][coordinate.col];
-
-        if (leftField == Field.SHIP || rightField == Field.SHIP || topField == Field.SHIP || bottomField == Field.SHIP) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public static boolean isSunkenShip(Coordinate coordinate, Field field) {
         int initialRow = coordinate.row;
         int initialCol = coordinate.col;
